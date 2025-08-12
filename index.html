@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TaroHosting — Hosting de Calidad</title>
+  <meta name="description" content="Hosting para Minecraft y bots con rendimiento premium, soporte experto y precios claros." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
+          colors: {
+            primary: {
+              50:  '#fff0ff',
+              100: '#ffe0ff',
+              200: '#ffb8ff',
+              300: '#ff90ff',
+              400: '#ff66ff',
+              500: '#FF25FF',
+              600: '#e013e0',
+              700: '#b60fb6',
+              800: '#8a0d8a',
+              900: '#5e095e'
+            },
+            violetx: {
+              500: '#7A00FF',
+              600: '#6700d6'
+            },
+            dark: {
+              950: '#07070b',
+              900: '#0b0b12',
+              800: '#12121a',
+              700: '#1b1b26'
+            }
+          },
+          boxShadow: {
+            glow: '0 0 0 3px rgba(255,37,255,.25), 0 10px 30px -10px rgba(255,37,255,.45)'
+          },
+          backgroundImage: {
+            'grid': "radial-gradient(circle at 1px 1px, rgba(255,255,255,.08) 1px, transparent 0)",
+            'hero': "radial-gradient(1200px 600px at 10% 0%, rgba(255,37,255,.20), transparent 60%), radial-gradient(800px 400px at 90% 10%, rgba(122,0,255,.25), transparent 70%)"
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root{ color-scheme: dark; }
+    .glass{ backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(18,18,26,.6), rgba(18,18,26,.35)); border: 1px solid rgba(255,255,255,.07)}
+    .gradient-text{ background: linear-gradient(90deg, #FF25FF 0%, #ca1dca 55%, #af19af 100%); -webkit-background-clip: text; background-clip: text; color: transparent;}
+    .pricing-pill{ background: linear-gradient( to right, rgba(255,37,255,.18), rgba(122,0,255,.18)); border: 1px solid rgba(255,255,255,.10)}
+  </style>
+</head>
+<body class="bg-dark-900 text-white antialiased">
+  <!-- NAV -->
+  <header id="nav" class="fixed inset-x-0 top-3 z-50 transition-all">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex h-16 items-center justify-between rounded-2xl glass px-4">
+        <a href="#" class="flex items-center gap-3">
+          <img src="https://www.tarohosting.com/TH.png" alt="TaroHosting" class="h-9 w-9" loading="lazy" />
+          <span class="text-lg font-semibold opacity-90">TaroHosting</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm text-white/70">
+          <a href="#planes" class="hover:text-white">Planes</a>
+          <a href="#servicios" class="hover:text-white">Servicios</a>
+          <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="hover:text-white">Soporte</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="#planes" class="hidden sm:inline-flex items-center rounded-xl px-4 py-2 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 active:bg-primary-600 transition shadow-glow">Ver planes</a>
+          <button class="md:hidden rounded-xl p-2 glass" id="menuBtn" aria-label="Abrir menú">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+      <!-- mobile -->
+      <div id="mobile" class="hidden mt-2 glass rounded-2xl p-3 md:hidden">
+        <a href="#planes" class="block px-3 py-2 rounded-lg hover:bg-white/5">Planes</a>
+        <a href="#servicios" class="block px-3 py-2 rounded-lg hover:bg-white/5">Servicios</a>
+        <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="block px-3 py-2 rounded-lg hover:bg-white/5">Soporte</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative pt-28 overflow-hidden bg-hero">
+    <div class="absolute inset-0 bg-grid bg-[length:22px_22px] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]"></div>
+    <div class="relative mx-auto max-w-7xl px-4 pb-24">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 pricing-pill px-3 py-1.5 rounded-full text-sm text-white/80">
+            <span class="inline-block h-2 w-2 rounded-full bg-primary-500 shadow-[0_0_10px_2px_rgba(255,37,255,.6)]"></span>
+            Calidad y servicio garantizados
+          </p>
+          <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+            Hosting de <span class="gradient-text">CALIDAD</span> para tu servidor
+          </h1>
+          <p class="mt-5 text-white/70 text-lg max-w-prose">Una alternativa real a los alojamientos convencionales: hardware potente, configuraciones optimizadas y soporte experto para despegar tu proyecto.</p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#planes" class="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 active:bg-primary-600 transition shadow-glow"><i class="fa-solid fa-list"></i> Ver planes</a>
+            <a href="https://billing.tarohosting.com/store/minecraft-hosting/mc-8g" class="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold bg-white/10 hover:bg-white/15 border border-white/10"><i class="fa-solid fa-cart-shopping"></i> Comprar ahora</a>
+          </div>
+          <div class="mt-10 grid grid-cols-3 gap-6 text-center">
+            <div class="glass rounded-2xl p-4">
+              <div class="text-2xl font-extrabold">10<span class="text-primary-300">+</span></div>
+              <div class="text-xs text-white/60">Años de experiencia</div>
+            </div>
+            <div class="glass rounded-2xl p-4">
+              <div class="text-2xl font-extrabold">24/7</div>
+              <div class="text-xs text-white/60">Uptime y soporte</div>
+            </div>
+            <div class="glass rounded-2xl p-4">
+              <div class="text-2xl font-extrabold">Anti‑DDoS</div>
+              <div class="text-xs text-white/60">Protección avanzada</div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="https://www.tarohosting.com/TH_portada.png" alt="Panel de TaroHosting" class="max-w-full h-auto object-contain rounded-[2rem] shadow-2xl border-2 border-white/20 bg-dark-800" />
+          <div class="absolute -right-4 -bottom-6 hidden sm:block">
+            <div class="rounded-lg px-4 py-3 glass border border-white/10 text-sm">
+              <span class="text-primary-300 font-semibold">Nuevo:</span>
+              Planes anuales con <span class="font-semibold">-50%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES -->
+  <section id="planes" class="relative py-20">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Configura tu <span class="gradient-text">Plan</span></h2>
+        <p class="mt-3 text-white/70">Accede a herramientas premium, plantillas y asistencia de devs profesionales.</p>
+      </div>
+
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <span class="text-sm text-white/70">Mensual</span>
+        <button id="toggle" class="relative h-9 w-16 rounded-full bg-white/10 border border-white/10 transition focus:outline-none focus:ring-2 focus:ring-primary-500">
+          <span id="thumb" class="absolute top-0.5 left-0.5 h-8 w-8 rounded-full bg-white transition"></span>
+        </button>
+        <span class="text-sm text-white/70 flex items-center gap-2">Anual <span class="text-xs px-2 py-0.5 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-200">-50%</span></span>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <!-- Card 1 -->
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col h-full">
+          <div class="mb-4 flex items-center gap-3">
+            <img src="https://www.tarohosting.com/plans-images/esqueleto.png" alt="Esqueleto" class="h-10 w-10"/>
+            <div>
+              <h3 class="font-semibold text-lg">Paquete Esqueleto</h3>
+              <p class="text-xs text-white/60">Ideal para empezar</p>
+            </div>
+          </div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-2xl font-extrabold">$</span>
+            <span class="text-4xl font-extrabold price" data-month="8" data-year="48">8.00</span>
+            <span class="text-sm text-white/60 period">/mo</span>
+          </div>
+          <ul class="mt-5 mb-6 space-y-3 text-sm text-white/80 flex-grow">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-memory text-primary-300 w-4 text-base"></i><span>4GB RAM DDR4</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-primary-300 w-4 text-base"></i><span>CPU i9‑10900K</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-hard-drive text-primary-300 w-4 text-base"></i><span>60GB SSD</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-gamepad text-primary-300 w-4 text-base"></i><span>Java / Bedrock / Crossplay</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-primary-300 w-4 text-base"></i><span>Anti‑DDoS</span></li>
+          </ul>
+          <a href="https://billing.tarohosting.com/store/minecraft-hosting/mc-4gb" data-year-href="https://billing.tarohosting.com/store/minecraft-hosting-anual/minecraft-hosting-anual-paquete-esqueleto" class="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 transition shadow-glow buy"><i class="fa-solid fa-cart-shopping"></i> Comprar plan</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col h-full">
+          <div class="mb-4 flex items-center gap-3">
+            <img src="https://www.tarohosting.com/plans-images/creeper.png" alt="Creeper" class="h-10 w-10"/>
+            <div>
+              <h3 class="font-semibold text-lg">Paquete Creeper</h3>
+              <p class="text-xs text-white/60">Para crecer sin límites</p>
+            </div>
+          </div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-2xl font-extrabold">$</span>
+            <span class="text-4xl font-extrabold price" data-month="12" data-year="72">12.00</span>
+            <span class="text-sm text-white/60 period">/mo</span>
+          </div>
+          <ul class="mt-5 mb-6 space-y-3 text-sm text-white/80 flex-grow">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-memory text-primary-300 w-4 text-base"></i><span>6GB RAM DDR4</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-primary-300 w-4 text-base"></i><span>CPU i9‑10900K</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-hard-drive text-primary-300 w-4 text-base"></i><span>80GB SSD</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-plug text-primary-300 w-4 text-base"></i><span>Plugins / Mods</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-primary-300 w-4 text-base"></i><span>Anti‑DDoS</span></li>
+          </ul>
+          <a href="https://billing.tarohosting.com/store/minecraft-hosting/mc-6gb" data-year-href="https://billing.tarohosting.com/store/minecraft-hosting-anual/minecraft-hosting-anual-paquete-creeper" class="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 transition shadow-glow buy"><i class="fa-solid fa-cart-shopping"></i> Comprar plan</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="relative glass rounded-3xl p-6 border border-white/10 flex flex-col h-full">
+          <div class="absolute right-6 -top-3"><span class="text-xs px-3 py-1 rounded-full bg-emerald-500 text-black font-semibold">Más popular</span></div>
+          <div class="mb-4 flex items-center gap-3">
+            <img src="https://www.tarohosting.com/plans-images/enderman.png" alt="Enderman" class="h-10 w-10"/>
+            <div>
+              <h3 class="font-semibold text-lg">Paquete Enderman</h3>
+              <p class="text-xs text-white/60">Para comunidades activas</p>
+            </div>
+          </div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-2xl font-extrabold">$</span>
+            <span class="text-4xl font-extrabold price" data-month="16" data-year="96">16.00</span>
+            <span class="text-sm text-white/60 period">/mo</span>
+          </div>
+          <ul class="mt-5 mb-6 space-y-3 text-sm text-white/80 flex-grow">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-memory text-primary-300 w-4 text-base"></i><span>8GB RAM DDR4</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-primary-300 w-4 text-base"></i><span>CPU i9‑10900K</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-hard-drive text-primary-300 w-4 text-base"></i><span>100GB SSD</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-network-wired text-primary-300 w-4 text-base"></i><span>Puertos liberados / IP custom</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-gamepad text-primary-300 w-4 text-base"></i><span>Java / Bedrock / Crossplay</span></li>
+          </ul>
+          <a href="https://billing.tarohosting.com/store/minecraft-hosting/mc-8g" data-year-href="https://billing.tarohosting.com/store/minecraft-hosting-anual/minecraft-hosting-anual-paquete-enderman" class="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 transition shadow-glow buy"><i class="fa-solid fa-cart-shopping"></i> Comprar plan</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col h-full">
+          <div class="mb-4 flex items-center gap-3">
+            <img src="https://www.tarohosting.com/plans-images/wither.png" alt="Wither" class="h-10 w-10"/>
+            <div>
+              <h3 class="font-semibold text-lg">Paquete Wither Skeleton</h3>
+              <p class="text-xs text-white/60">Para grandes proyectos</p>
+            </div>
+          </div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-2xl font-extrabold">$</span>
+            <span class="text-4xl font-extrabold price" data-month="20" data-year="120">20.00</span>
+            <span class="text-sm text-white/60 period">/mo</span>
+          </div>
+          <ul class="mt-5 mb-6 space-y-3 text-sm text-white/80 flex-grow">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-memory text-primary-300 w-4 text-base"></i><span>10GB RAM DDR4</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-primary-300 w-4 text-base"></i><span>CPU i9‑10900K</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-hard-drive text-primary-300 w-4 text-base"></i><span>120GB SSD</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-plug text-primary-300 w-4 text-base"></i><span>Plugins / Mods</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-primary-300 w-4 text-base"></i><span>Anti‑DDoS</span></li>
+          </ul>
+          <a href="https://billing.tarohosting.com/store/minecraft-hosting/mc-10gb" data-year-href="https://billing.tarohosting.com/store/minecraft-hosting-anual/minecraft-hosting-anual-paquete-wither-skeleton" class="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 transition shadow-glow buy"><i class="fa-solid fa-cart-shopping"></i> Comprar plan</a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col h-full">
+          <div class="mb-4 flex items-center gap-3">
+            <img src="https://www.tarohosting.com/plans-images/blaze.png" alt="Blaze" class="h-10 w-10"/>
+            <div>
+              <h3 class="font-semibold text-lg">Paquete Blaze</h3>
+              <p class="text-xs text-white/60">Alto rendimiento</p>
+            </div>
+          </div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-2xl font-extrabold">$</span>
+            <span class="text-4xl font-extrabold price" data-month="24" data-year="144">24.00</span>
+            <span class="text-sm text-white/60 period">/mo</span>
+          </div>
+          <ul class="mt-5 mb-6 space-y-3 text-sm text-white/80 flex-grow">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-memory text-primary-300 w-4 text-base"></i><span>12GB RAM DDR4</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-primary-300 w-4 text-base"></i><span>CPU i9‑10900K</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-hard-drive text-primary-300 w-4 text-base"></i><span>140GB SSD</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-network-wired text-primary-300 w-4 text-base"></i><span>Puertos liberados / IP custom</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-gamepad text-primary-300 w-4 text-base"></i><span>Java / Bedrock / Crossplay</span></li>
+          </ul>
+          <a href="https://billing.tarohosting.com/store/minecraft-hosting/mc-12gb" data-year-href="https://billing.tarohosting.com/store/minecraft-hosting-anual/minecraft-hosting-anual-paquete-blaze" class="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 transition shadow-glow buy"><i class="fa-solid fa-cart-shopping"></i> Comprar plan</a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col h-full">
+          <div class="mb-4 flex items-center gap-3">
+            <img src="https://www.tarohosting.com/plans-images/enderDragon.png" alt="Ender Dragon" class="h-10 w-10"/>
+            <div>
+              <h3 class="font-semibold text-lg">Paquete Ender Dragon</h3>
+              <p class="text-xs text-white/60">Para networks exigentes</p>
+            </div>
+          </div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-2xl font-extrabold">$</span>
+            <span class="text-4xl font-extrabold price" data-month="32" data-year="192">32.00</span>
+            <span class="text-sm text-white/60 period">/mo</span>
+          </div>
+          <ul class="mt-5 mb-6 space-y-3 text-sm text-white/80 flex-grow">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-memory text-primary-300 w-4 text-base"></i><span>16GB RAM DDR4</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-primary-300 w-4 text-base"></i><span>CPU i9‑10900K</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-hard-drive text-primary-300 w-4 text-base"></i><span>180GB SSD</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-plug text-primary-300 w-4 text-base"></i><span>Plugins / Mods</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-primary-300 w-4 text-base"></i><span>Anti‑DDoS</span></li>
+          </ul>
+          <a href="https://billing.tarohosting.com/store/minecraft-hosting/mc-16gb" data-year-href="https://billing.tarohosting.com/store/minecraft-hosting-anual/minecraft-hosting-anual-paquete-ender-dragon" class="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 transition shadow-glow buy"><i class="fa-solid fa-cart-shopping"></i> Comprar plan</a>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col h-full">
+          <div class="mb-4 flex items-center gap-3">
+            <img src="https://www.tarohosting.com/plans-images/Herobrine.png" alt="Herobrine" class="h-10 w-10"/>
+            <div>
+              <h3 class="font-semibold text-lg">Paquete Herobrine</h3>
+              <p class="text-xs text-white/60">Máximo desempeño</p>
+            </div>
+          </div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-2xl font-extrabold">$</span>
+            <span class="text-4xl font-extrabold price" data-month="48" data-year="288">48.00</span>
+            <span class="text-sm text-white/60 period">/mo</span>
+          </div>
+          <ul class="mt-5 mb-6 space-y-3 text-sm text-white/80 flex-grow">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-memory text-primary-300 w-4 text-base"></i><span>24GB RAM DDR4</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-primary-300 w-4 text-base"></i><span>CPU i9‑10900K</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-hard-drive text-primary-300 w-4 text-base"></i><span>195GB SSD</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-network-wired text-primary-300 w-4 text-base"></i><span>Puertos liberados / IP custom</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-gamepad text-primary-300 w-4 text-base"></i><span>Java / Bedrock / Crossplay</span></li>
+          </ul>
+          <a href="https://billing.tarohosting.com/store/minecraft-hosting/paquete-herobrine" data-year-href="https://billing.tarohosting.com/store/minecraft-hosting-anual/minecraft-hosting-anual-paquete-herobrine" class="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 transition shadow-glow buy"><i class="fa-solid fa-cart-shopping"></i> Comprar plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Divider -->
+  <section class="py-6">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="rounded-3xl glass p-6 md:p-10 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-2xl md:text-3xl font-extrabold">¿Listo para migrar? Lo hacemos por ti gratis.</h3>
+          <p class="text-white/70 mt-1">Trae tu mundo y plugins. Hacemos backup, ajuste de JVM y seguridad.</p>
+        </div>
+        <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 transition shadow-glow"><i class="fa-solid fa-headset"></i> Hablar con soporte</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS EXTRA -->
+  <section id="servicios" class="py-20">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Gana dinero con tu <span class="gradient-text">Server</span></h2>
+        <p class="mt-3 text-white/70">Nos encargamos de la configuración total de tu monetización.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col h-full">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="https://www.tarohosting.com/plans-images/blaze.png" alt="Blaze" class="h-10 w-10"/>
+            <h3 class="font-semibold text-lg">Tienda Tebex configurada</h3>
+          </div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-2xl font-extrabold">$</span>
+            <span class="text-4xl font-extrabold">50.00</span>
+            <span class="text-xs text-white/60">/una sola vez</span>
+          </div>
+          <p class="mt-3 mb-6 text-white/70 flex-grow">Diseño, categorías, paquetes y webhooks. De 0 a 100% funcionando.</p>
+          <a href="https://billing.tarohosting.com//store/servidores-todos-en-uno/tienda-tebex-config" class="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 transition shadow-glow"><i class="fa-solid fa-cart-shopping"></i> Comprar</a>
+        </div>
+
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col h-full">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="https://www.tarohosting.com/plans-images/enderman.png" alt="Enderman" class="h-10 w-10"/>
+            <h3 class="font-semibold text-lg">Curso completo: Server de Éxito</h3>
+          </div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-2xl font-extrabold">$</span>
+            <span class="text-4xl font-extrabold">100.00</span>
+            <span class="text-xs text-white/60">/una sola vez</span>
+          </div>
+          <p class="mt-3 mb-6 text-white/70 flex-grow">Marketing, economía, staff, escalado. Todo lo que necesitas para monetizar.</p>
+          <a href="https://billing.tarohosting.com/store/servidores-todos-en-uno/curso-completo-server-de-exito-de-0-a-100" class="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 transition shadow-glow"><i class="fa-solid fa-cart-shopping"></i> Comprar</a>
+        </div>
+
+        <div class="relative glass rounded-3xl p-6 border border-white/10 flex flex-col h-full">
+          <div class="absolute right-6 -top-3"><span class="text-xs px-3 py-1 rounded-full bg-emerald-500 text-black font-semibold">Pack</span></div>
+          <div class="flex items-center gap-3 mb-3">
+            <img src="https://www.tarohosting.com/plans-images/Herobrine.png" alt="Herobrine" class="h-10 w-10"/>
+            <h3 class="font-semibold text-lg">Network completa</h3>
+          </div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-2xl font-extrabold">$</span>
+            <span class="text-4xl font-extrabold">100.00</span>
+            <span class="text-xs text-white/60">/pago inicial</span>
+          </div>
+          <div class="text-sm text-white/70 -mt-1">Luego $50.00 / mensual</div>
+          <ul class="mt-4 mb-6 space-y-2 text-sm text-white/80 flex-grow">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-emerald-400"></i><span>30GB RAM • Ryzen 7 3800X</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-emerald-400"></i><span>3 modalidades configuradas</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-emerald-400"></i><span>Soporte premium</span></li>
+          </ul>
+          <a href="https://billing.tarohosting.com/store/servidores-todos-en-uno/network-completa" class="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 transition shadow-glow"><i class="fa-solid fa-cart-shopping"></i> Comprar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section id="valores" class="py-20">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Nuestros <span class="gradient-text">Valores</span></h2>
+        <p class="mt-3 text-white/70 max-w-2xl mx-auto">Conoce lo que nos diferencia y lo que ofrecemos a todos nuestros clientes.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col items-start">
+          <i class="fa-solid fa-handshake text-primary-400 text-3xl mb-4"></i>
+          <h3 class="font-semibold text-xl mb-3">Honestidad con el cliente</h3>
+          <p class="text-white/70">Nuestro valor es la honestidad con el cliente, aquí recibes lo que pagas.</p>
+        </div>
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col items-start">
+          <i class="fa-solid fa-toolbox text-primary-400 text-3xl mb-4"></i>
+          <h3 class="font-semibold text-xl mb-3">Herramientas Premium incluidas</h3>
+          <p class="text-white/70">Acceso gratuito a todas las herramientas de paga para crear un server mucho más fácil.</p>
+        </div>
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col items-start">
+          <i class="fa-solid fa-award text-primary-400 text-3xl mb-4"></i>
+          <h3 class="font-semibold text-xl mb-3">Garantía de calidad y fiabilidad</h3>
+          <p class="text-white/70">Nos enfocamos en prestar un servicio de excelencia en potencia y fiabilidad.</p>
+        </div>
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col items-start">
+          <i class="fa-solid fa-server text-primary-400 text-3xl mb-4"></i>
+          <h3 class="font-semibold text-xl mb-3">Servidores de alto rendimiento</h3>
+          <p class="text-white/70">Siempre tendrás las mejores máquinas para tu hosting.</p>
+        </div>
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col items-start">
+          <i class="fa-brands fa-discord text-primary-400 text-3xl mb-4"></i>
+          <h3 class="font-semibold text-xl mb-3">Soporte rápido y cercano</h3>
+          <p class="text-white/70">Te brindamos ayuda en nuestros tickets de Discord.</p>
+        </div>
+        <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col items-start justify-between">
+          <div>
+            <i class="fa-solid fa-right-to-bracket text-primary-400 text-3xl mb-4"></i>
+            <h3 class="font-semibold text-xl mb-3">Únete a nuestra comunidad</h3>
+            <p class="text-white/70">Ingresa a nuestro Discord y forma parte de TaroHosting.</p>
+          </div>
+          <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="mt-4 inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 transition shadow-glow">
+            <i class="fa-brands fa-discord"></i> Ingresar al Discord
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-dark-800 mt-20">
+    <div class="mx-auto max-w-7xl px-4 py-12 grid md:grid-cols-4 gap-10">
+      <div>
+        <img src="https://www.tarohosting.com/TaroHosting.png" alt="TaroHosting" class="h-12 w-auto mb-3" />
+        <p class="text-sm text-white/70 max-w-xs">Calidad y honestidad al mejor precio ✨<br> Hosting confiable para que tu proyecto crezca sin límites.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3">Enlaces rápidos</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="#planes" class="hover:text-white">Planes</a></li>
+          <li><a href="#servicios" class="hover:text-white">Servicios</a></li>
+          <li><a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="hover:text-white">Soporte</a></li>
+          <li><a href="#" class="hover:text-white">Política de privacidad</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3">Servicios</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li>Minecraft Hosting</li>
+          <li>Servidores VPS</li>
+          <li>Protección Anti‑DDoS</li>
+          <li>Dominios y SSL</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3">Síguenos</h4>
+        <div class="flex flex-col gap-3">
+          <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 glass border border-white/10 hover:bg-white/10">
+            <i class="fa-brands fa-discord"></i> Discord de soporte
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-6 text-center text-sm text-white/60">
+      © <span id="y"></span> TaroHosting. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuBtn')?.addEventListener('click',()=>{
+      const m = document.getElementById('mobile');
+      m.classList.toggle('hidden');
+    });
+
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      nav.classList.toggle('backdrop-blur', window.scrollY > 10);
+      nav.classList.toggle('bg-dark-900/40', window.scrollY > 10);
+    };
+    window.addEventListener('scroll', onScroll); onScroll();
+
+    const toggle = document.getElementById('toggle');
+    const thumb = document.getElementById('thumb');
+    let yearly = false;
+    function setMode(){
+      document.querySelectorAll('.price').forEach(el=>{
+        const month = el.getAttribute('data-month');
+        const year = el.getAttribute('data-year');
+        el.textContent = yearly ? parseFloat(year).toFixed(2) : parseFloat(month).toFixed(2);
+      });
+      document.querySelectorAll('.period').forEach(el=> el.textContent = yearly ? '/año' : '/mo');
+      document.querySelectorAll('.buy').forEach(a=>{
+        const yearHref = a.getAttribute('data-year-href');
+        const monthHref = a.getAttribute('href');
+        a.setAttribute('data-month-href', monthHref);
+        a.setAttribute('href', yearly ? yearHref : a.getAttribute('data-month-href'));
+      });
+      thumb.style.transform = yearly ? 'translateX(28px)' : 'translateX(0)';
+    }
+    toggle.addEventListener('click', ()=>{ yearly = !yearly; setMode(); });
+    setMode();
+
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
