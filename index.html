@@ -54,13 +54,15 @@
     }
   </script>
   <style>
-    :root{ color-scheme: dark; }
-    .glass{ backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(18,18,26,.6), rgba(18,18,26,.35)); border: 1px solid rgba(255,255,255,.07)}
+    :root{ color-scheme: light; }
+    .glass{ backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.35)); border: 1px solid rgba(0,0,0,.07)}
     .gradient-text{ background: linear-gradient(90deg, #FF25FF 0%, #ca1dca 55%, #af19af 100%); -webkit-background-clip: text; background-clip: text; color: transparent;}
-    .pricing-pill{ background: linear-gradient( to right, rgba(255,37,255,.18), rgba(122,0,255,.18)); border: 1px solid rgba(255,255,255,.10)}
+    .pricing-pill{ background: linear-gradient( to right, rgba(255,37,255,.18), rgba(122,0,255,.18)); border: 1px solid rgba(0,0,0,.10)}
+    .dark .glass{ backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(18,18,26,.6), rgba(18,18,26,.35)); border: 1px solid rgba(255,255,255,.07)}
+    .dark .pricing-pill{ background: linear-gradient( to right, rgba(255,37,255,.18), rgba(122,0,255,.18)); border: 1px solid rgba(255,255,255,.10)}
   </style>
 </head>
-<body class="bg-dark-900 text-white antialiased">
+<body class="bg-white text-black antialiased" data-theme="light">
   <!-- NAV -->
   <header id="nav" class="fixed inset-x-0 top-3 z-50 transition-all">
     <div class="mx-auto max-w-7xl px-4">
@@ -69,12 +71,16 @@
           <img src="https://www.tarohosting.com/TH.png" alt="TaroHosting" class="h-9 w-9" loading="lazy" />
           <span class="text-lg font-semibold opacity-90">TaroHosting</span>
         </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm text-white/70">
-          <a href="#planes" class="hover:text-white">Planes</a>
-          <a href="#servicios" class="hover:text-white">Servicios</a>
-          <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="hover:text-white">Soporte</a>
+        <nav class="hidden md:flex items-center gap-6 text-sm text-black/70 dark:text-white/70">
+          <a href="#planes" class="hover:text-black dark:hover:text-white">Planes</a>
+          <a href="#servicios" class="hover:text-black dark:hover:text-white">Servicios</a>
+          <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="hover:text-black dark:hover:text-white">Soporte</a>
         </nav>
         <div class="flex items-center gap-3">
+          <!-- Toggle theme -->
+          <button id="themeToggle" class="rounded-xl p-2 glass" aria-label="Cambiar tema">
+            <i class="fa-solid fa-moon"></i>
+          </button>
           <a href="#planes" class="hidden sm:inline-flex items-center rounded-xl px-4 py-2 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 active:bg-primary-600 transition shadow-glow">Ver planes</a>
           <button class="md:hidden rounded-xl p-2 glass" id="menuBtn" aria-label="Abrir menú">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -83,9 +89,9 @@
       </div>
       <!-- mobile -->
       <div id="mobile" class="hidden mt-2 glass rounded-2xl p-3 md:hidden">
-        <a href="#planes" class="block px-3 py-2 rounded-lg hover:bg-white/5">Planes</a>
-        <a href="#servicios" class="block px-3 py-2 rounded-lg hover:bg-white/5">Servicios</a>
-        <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="block px-3 py-2 rounded-lg hover:bg-white/5">Soporte</a>
+        <a href="#planes" class="block px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5">Planes</a>
+        <a href="#servicios" class="block px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5">Servicios</a>
+        <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="block px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5">Soporte</a>
       </div>
     </div>
   </header>
@@ -445,79 +451,89 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-white/10 bg-dark-800 mt-20">
+  <footer class="border-t border-black/10 dark:border-white/10 bg-gray-100 dark:bg-dark-800 mt-20">
     <div class="mx-auto max-w-7xl px-4 py-12 grid md:grid-cols-4 gap-10">
       <div>
         <img src="https://www.tarohosting.com/TaroHosting.png" alt="TaroHosting" class="h-12 w-auto mb-3" />
-        <p class="text-sm text-white/70 max-w-xs">Calidad y honestidad al mejor precio ✨<br> Hosting confiable para que tu proyecto crezca sin límites.</p>
+        <p class="text-sm text-black/70 dark:text-white/70 max-w-xs">Calidad y honestidad al mejor precio ✨<br> Hosting confiable para que tu proyecto crezca sin límites.</p>
       </div>
       <div>
-        <h4 class="text-white font-semibold mb-3">Enlaces rápidos</h4>
-        <ul class="space-y-2 text-sm text-white/70">
-          <li><a href="#planes" class="hover:text-white">Planes</a></li>
-          <li><a href="#servicios" class="hover:text-white">Servicios</a></li>
-          <li><a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="hover:text-white">Soporte</a></li>
-          <li><a href="#" class="hover:text-white">Política de privacidad</a></li>
+        <h4 class="text-black dark:text-white font-semibold mb-3">Enlaces rápidos</h4>
+        <ul class="space-y-2 text-sm text-black/70 dark:text-white/70">
+          <li><a href="#planes" class="hover:text-black dark:hover:text-white">Planes</a></li>
+          <li><a href="#servicios" class="hover:text-black dark:hover:text-white">Servicios</a></li>
+          <li><a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="hover:text-black dark:hover:text-white">Soporte</a></li>
+          <li><a href="#" class="hover:text-black dark:hover:text-white">Política de privacidad</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-white font-semibold mb-3">Servicios</h4>
-        <ul class="space-y-2 text-sm text-white/70">
+        <h4 class="text-black dark:text-white font-semibold mb-3">Servicios</h4>
+        <ul class="space-y-2 text-sm text-black/70 dark:text-white/70">
           <li>Minecraft Hosting</li>
           <li>Servidores VPS</li>
-          <li>Protección Anti‑DDoS</li>
+          <li>Protección Anti-DDoS</li>
           <li>Dominios y SSL</li>
         </ul>
       </div>
       <div>
-        <h4 class="text-white font-semibold mb-3">Síguenos</h4>
+        <h4 class="text-black dark:text-white font-semibold mb-3">Síguenos</h4>
         <div class="flex flex-col gap-3">
-          <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 glass border border-white/10 hover:bg-white/10">
+          <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 glass border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10">
             <i class="fa-brands fa-discord"></i> Discord de soporte
           </a>
         </div>
       </div>
     </div>
-    <div class="border-t border-white/10 py-6 text-center text-sm text-white/60">
+    <div class="border-t border-black/10 dark:border-white/10 py-6 text-center text-sm text-black/60 dark:text-white/60">
       © <span id="y"></span> TaroHosting. Todos los derechos reservados.
     </div>
   </footer>
 
   <script>
+    // menú mobile
     document.getElementById('menuBtn')?.addEventListener('click',()=>{
       const m = document.getElementById('mobile');
       m.classList.toggle('hidden');
     });
 
-    const nav = document.getElementById('nav');
-    const onScroll = () => {
-      nav.classList.toggle('backdrop-blur', window.scrollY > 10);
-      nav.classList.toggle('bg-dark-900/40', window.scrollY > 10);
-    };
-    window.addEventListener('scroll', onScroll); onScroll();
-
-    const toggle = document.getElementById('toggle');
-    const thumb = document.getElementById('thumb');
-    let yearly = false;
-    function setMode(){
-      document.querySelectorAll('.price').forEach(el=>{
-        const month = el.getAttribute('data-month');
-        const year = el.getAttribute('data-year');
-        el.textContent = yearly ? parseFloat(year).toFixed(2) : parseFloat(month).toFixed(2);
-      });
-      document.querySelectorAll('.period').forEach(el=> el.textContent = yearly ? '/año' : '/mo');
-      document.querySelectorAll('.buy').forEach(a=>{
-        const yearHref = a.getAttribute('data-year-href');
-        const monthHref = a.getAttribute('href');
-        a.setAttribute('data-month-href', monthHref);
-        a.setAttribute('href', yearly ? yearHref : a.getAttribute('data-month-href'));
-      });
-      thumb.style.transform = yearly ? 'translateX(28px)' : 'translateX(0)';
-    }
-    toggle.addEventListener('click', ()=>{ yearly = !yearly; setMode(); });
-    setMode();
-
+    // año footer
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Toggle theme con persistencia
+    const body = document.body;
+    const themeToggle = document.getElementById("themeToggle");
+
+    if (localStorage.getItem("theme") === "dark") {
+      setDark();
+    } else {
+      setLight();
+    }
+
+    themeToggle.addEventListener("click", () => {
+      if (body.dataset.theme === "light") {
+        setDark();
+        localStorage.setItem("theme", "dark");
+      } else {
+        setLight();
+        localStorage.setItem("theme", "light");
+      }
+    });
+
+    function setDark() {
+      body.dataset.theme = "dark";
+      body.classList.remove("bg-white","text-black");
+      body.classList.add("bg-dark-900","text-white","dark");
+      document.documentElement.style.colorScheme = "dark";
+      themeToggle.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+    }
+
+    function setLight() {
+      body.dataset.theme = "light";
+      body.classList.remove("bg-dark-900","text-white","dark");
+      body.classList.add("bg-white","text-black");
+      document.documentElement.style.colorScheme = "light";
+      themeToggle.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+    }
   </script>
 </body>
 </html>
