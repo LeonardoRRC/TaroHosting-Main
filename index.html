@@ -520,21 +520,22 @@
     });
 
     function setDark() {
-      body.dataset.theme = "dark";
-      body.classList.remove("bg-white","text-black");
-      body.classList.add("bg-dark-900","text-black dark:text-white","dark");
-      document.documentElement.style.colorScheme = "dark";
-      themeToggle.innerHTML = `<i class="fa-solid fa-sun"></i>`;
-    }
+  body.dataset.theme = "dark";
+  body.classList.remove("bg-white","text-black");
+  body.classList.add("bg-dark-900","text-white","dark"); // <- aquí separadas
+  document.documentElement.style.colorScheme = "dark";
+  themeToggle.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+}
 
-    function setLight() {
-      body.dataset.theme = "light";
-      body.classList.remove("bg-dark-900","text-black dark:text-white","dark");
-      body.classList.add("bg-white","text-black");
-      document.documentElement.style.colorScheme = "light";
-      themeToggle.innerHTML = `<i class="fa-solid fa-moon"></i>`;
-    }
+function setLight() {
+  body.dataset.theme = "light";
+  body.classList.remove("bg-dark-900","text-white","dark"); // <- aquí separadas
+  body.classList.add("bg-white","text-black");
+  document.documentElement.style.colorScheme = "light";
+  themeToggle.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+}
   </script>
 </body>
 </html>
+
 
