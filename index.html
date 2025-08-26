@@ -511,23 +511,30 @@ toggle.addEventListener("click", () => {
   
   if (yearly) {
     thumb.classList.add("translate-x-7");
-    toggle.classList.remove("bg-gray-300","dark:bg-white/10","border-gray-400","dark:border-black/10 dark:border-white/10");
+    toggle.classList.remove("bg-gray-300","dark:bg-white/10","border-gray-400","dark:border-black/10","dark:border-white/10");
     toggle.classList.add("bg-primary-500","border-primary-600");
     
     prices.forEach(p => p.textContent = p.dataset.year);
     periods.forEach(p => p.textContent = "/año");
     buyButtons.forEach(b => {
-      if (b.dataset.yearHref) b.href = b.dataset.yearHref;
+      if (b.dataset.yearHref) {
+        if (!b.dataset.monthHref) {
+          b.dataset.monthHref = b.href;
+        }
+        b.href = b.dataset.yearHref;
+      }
     });
   } else {
     thumb.classList.remove("translate-x-7");
     toggle.classList.remove("bg-primary-500","border-primary-600");
-    toggle.classList.add("bg-gray-300","dark:bg-white/10","border-gray-400","dark:border-black/10 dark:border-white/10");
+    toggle.classList.add("bg-gray-300","dark:bg-white/10","border-gray-400","dark:border-black/10","dark:border-white/10");
     
     prices.forEach(p => p.textContent = p.dataset.month);
     periods.forEach(p => p.textContent = "/mes");
     buyButtons.forEach(b => {
-      b.href = b.getAttribute("href").split("?")[0];
+      if (b.dataset.monthHref) {
+        b.href = b.dataset.monthHref;
+      }
     });
   }
 });
@@ -576,6 +583,7 @@ toggle.addEventListener("click", () => {
   </script>
 </body>
 </html>
+
 
 
 
