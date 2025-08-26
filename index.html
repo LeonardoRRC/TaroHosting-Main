@@ -12,55 +12,49 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind v4 desde el navegador -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
-          colors: {
-            primary: {
-              50:  '#fff0ff',
-              100: '#ffe0ff',
-              200: '#ffb8ff',
-              300: '#ff90ff',
-              400: '#ff66ff',
-              500: '#FF25FF',
-              600: '#e013e0',
-              700: '#b60fb6',
-              800: '#8a0d8a',
-              900: '#5e095e'
-            },
-            violetx: {
-              500: '#7A00FF',
-              600: '#6700d6'
-            },
-            dark: {
-              950: '#07070b',
-              900: '#0b0b12',
-              800: '#12121a',
-              700: '#1b1b26'
-            }
-          },
-          boxShadow: {
-            glow: '0 0 0 3px rgba(255,37,255,.25), 0 10px 30px -10px rgba(255,37,255,.45)'
-          },
-          backgroundImage: {
-            'grid': "radial-gradient(circle at 1px 1px, rgba(255,255,255,.08) 1px, transparent 0)",
-            'hero': "radial-gradient(1200px 600px at 10% 0%, rgba(255,37,255,.20), transparent 60%), radial-gradient(800px 400px at 90% 10%, rgba(122,0,255,.25), transparent 70%)"
-          }
-        }
-      }
+
+  <!-- Definición de tema -->
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: Inter, ui-sans-serif, system-ui;
+
+      --color-primary-50:  #fff0ff;
+      --color-primary-100: #ffe0ff;
+      --color-primary-200: #ffb8ff;
+      --color-primary-300: #ff90ff;
+      --color-primary-400: #ff66ff;
+      --color-primary-500: #FF25FF;
+      --color-primary-600: #e013e0;
+      --color-primary-700: #b60fb6;
+      --color-primary-800: #8a0d8a;
+      --color-primary-900: #5e095e;
+
+      --color-violetx-500: #7A00FF;
+      --color-violetx-600: #6700d6;
+
+      --color-dark-950: #07070b;
+      --color-dark-900: #0b0b12;
+      --color-dark-800: #12121a;
+      --color-dark-700: #1b1b26;
+
+      --shadow-glow: 0 0 0 3px rgba(255,37,255,.25), 0 10px 30px -10px rgba(255,37,255,.45);
+
+      --background-image-grid: radial-gradient(circle at 1px 1px, rgba(255,255,255,.08) 1px, transparent 0);
+      --background-image-hero: radial-gradient(1200px 600px at 10% 0%, rgba(255,37,255,.20), transparent 60%),
+                               radial-gradient(800px 400px at 90% 10%, rgba(122,0,255,.25), transparent 70%);
     }
-  </script>
+  </style>
+
   <style>
-    :root{ color-scheme: light; }
-    .glass{ backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.35)); border: 1px solid rgba(0,0,0,.07)}
-    .gradient-text{ background: linear-gradient(90deg, #FF25FF 0%, #ca1dca 55%, #af19af 100%); -webkit-background-clip: text; background-clip: text; color: transparent;}
-    .pricing-pill{ background: linear-gradient( to right, rgba(255,37,255,.18), rgba(122,0,255,.18)); border: 1px solid rgba(0,0,0,.10)}
-    .dark .glass{ backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(18,18,26,.6), rgba(18,18,26,.35)); border: 1px solid rgba(255,255,255,.07)}
-    .dark .pricing-pill{ background: linear-gradient( to right, rgba(255,37,255,.18), rgba(122,0,255,.18)); border: 1px solid rgba(255,255,255,.10)}
+    :root { color-scheme: light; }
+    .glass { backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.35)); border: 1px solid rgba(0,0,0,.07) }
+    .gradient-text { background: linear-gradient(90deg, #FF25FF 0%, #ca1dca 55%, #af19af 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .pricing-pill { background: linear-gradient(to right, rgba(255,37,255,.18), rgba(122,0,255,.18)); border: 1px solid rgba(0,0,0,.10) }
+    .dark .glass { backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(18,18,26,.6), rgba(18,18,26,.35)); border: 1px solid rgba(255,255,255,.07) }
+    .dark .pricing-pill { background: linear-gradient(to right, rgba(255,37,255,.18), rgba(122,0,255,.18)); border: 1px solid rgba(255,255,255,.10) }
   </style>
 </head>
 <body class="bg-white text-black antialiased" data-theme="light">
@@ -497,91 +491,95 @@
 </div>
   </footer>
 
-  <script>
-    // Switch Mensual/Anual
-const toggle = document.getElementById("toggle");
-const /plans-images/umb = document.getElementById("thumb");
-const prices = document.querySelectorAll(".price");
-const periods = document.querySelectorAll(".period");
-const buyButtons = document.querySelectorAll(".buy");
+<script>
+  // Switch Mensual/Anual
+  const toggle = document.getElementById("toggle");
+  const thumb = document.getElementById("thumb");
+  const prices = document.querySelectorAll(".price");
+  const periods = document.querySelectorAll(".period");
+  const buyButtons = document.querySelectorAll(".buy");
 
-let yearly = false;
+  let yearly = false;
 
-toggle.addEventListener("click", () => {
-  yearly = !yearly;
-  
-  if (yearly) {
-    thumb.classList.add("translate-x-7");
-    toggle.classList.remove("bg-gray-300","dark:bg-white/10","border-gray-400","dark:border-black/10","dark:border-white/10");
-    toggle.classList.add("bg-primary-500","border-primary-600");
+  toggle.addEventListener("click", () => {
+    yearly = !yearly;
     
-    prices.forEach(p => p.textContent = parseFloat(p.dataset.year).toFixed(2));
-    periods.forEach(p => p.textContent = "/año");
-    buyButtons.forEach(b => {
-      if (b.dataset.yearHref) {
-        if (!b.dataset.monthHref) {
-          b.dataset.monthHref = b.href;
+    if (yearly) {
+      thumb.classList.add("translate-x-7");
+      toggle.classList.remove("bg-gray-300","dark:bg-white/10","border-gray-400","dark:border-black/10","dark:border-white/10");
+      toggle.classList.add("bg-primary-500","border-primary-600");
+      
+      prices.forEach(p => p.textContent = parseFloat(p.dataset.year).toFixed(2));
+      periods.forEach(p => p.textContent = "/año");
+      buyButtons.forEach(b => {
+        if (b.dataset.yearHref) {
+          if (!b.dataset.monthHref) {
+            b.dataset.monthHref = b.href;
+          }
+          b.href = b.dataset.yearHref;
         }
-        b.href = b.dataset.yearHref;
-      }
-    });
+      });
+    } else {
+      thumb.classList.remove("translate-x-7");
+      toggle.classList.remove("bg-primary-500","border-primary-600");
+      toggle.classList.add("bg-gray-300","dark:bg-white/10","border-gray-400","dark:border-black/10","dark:border-white/10");
+      
+      prices.forEach(p => p.textContent = parseFloat(p.dataset.month).toFixed(2));
+      periods.forEach(p => p.textContent = "/mes");
+      buyButtons.forEach(b => {
+        if (b.dataset.monthHref) {
+          b.href = b.dataset.monthHref;
+        }
+      });
+    }
+  });
+
+  // menú móvil
+  document.getElementById('menuBtn')?.addEventListener('click',()=>{
+    const m = document.getElementById('mobile');
+    m.classList.toggle('hidden');
+  });
+
+  // año footer
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Toggle theme con persistencia
+  const body = document.body;
+  const themeToggle = document.getElementById("themeToggle");
+
+  if (localStorage.getItem("theme") === "dark") {
+    setDark();
   } else {
-    thumb.classList.remove("translate-x-7");
-    toggle.classList.remove("bg-primary-500","border-primary-600");
-    toggle.classList.add("bg-gray-300","dark:bg-white/10","border-gray-400","dark:border-black/10","dark:border-white/10");
-    
-    prices.forEach(p => p.textContent = parseFloat(p.dataset.month).toFixed(2));
-    periods.forEach(p => p.textContent = "/mes");
-    buyButtons.forEach(b => {
-      if (b.dataset.monthHref) {
-        b.href = b.dataset.monthHref;
-      }
-    });
+    setLight();
   }
-});
 
-    document.getElementById('menuBtn')?.addEventListener('click',()=>{
-      const m = document.getElementById('mobile');
-      m.classList.toggle('hidden');
-    });
-
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    const body = document.body;
-    const themeToggle = document.getElementById("themeToggle");
-
-    if (localStorage.getItem("theme") === "dark") {
+  themeToggle.addEventListener("click", () => {
+    if (body.dataset.theme === "light") {
       setDark();
+      localStorage.setItem("theme", "dark");
     } else {
       setLight();
+      localStorage.setItem("theme", "light");
     }
+  });
 
-    themeToggle.addEventListener("click", () => {
-      if (body.dataset.theme === "light") {
-        setDark();
-        localStorage.setItem("theme", "dark");
-      } else {
-        setLight();
-        localStorage.setItem("theme", "light");
-      }
-    });
+  function setDark() {
+    body.dataset.theme = "dark";
+    body.classList.add("dark","bg-dark-900","text-white");
+    body.classList.remove("bg-white","text-black");
+    document.documentElement.style.colorScheme = "dark";
+    themeToggle.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+  }
 
-    function setDark() {
-      body.dataset.theme = "dark";
-      body.classList.add("dark","bg-dark-900","text-white");
-      body.classList.remove("bg-white","text-black");
-      document.documentElement.style.colorScheme = "dark";
-      themeToggle.innerHTML = `<i class="fa-solid fa-sun"></i>`;
-    }
+  function setLight() {
+    body.dataset.theme = "light";
+    body.classList.remove("dark","bg-dark-900","text-white");
+    body.classList.add("bg-white","text-black");
+    document.documentElement.style.colorScheme = "light";
+    themeToggle.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+  }
+</script>
 
-    function setLight() {
-      body.dataset.theme = "light";
-      body.classList.remove("dark","bg-dark-900","text-white");
-      body.classList.add("bg-white","text-black");
-      document.documentElement.style.colorScheme = "light";
-      themeToggle.innerHTML = `<i class="fa-solid fa-moon"></i>`;
-    }
-  </script>
 </body>
 </html>
 
