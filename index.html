@@ -167,7 +167,6 @@
 </div>
 
       <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        <!-- Card 1 -->
         <div class="glass rounded-3xl p-6 border border-white/10 flex flex-col h-full">
           <div class="mb-4 flex items-center gap-3">
             <img src="https://www.tarohosting.com/plans-images/esqueleto.png" alt="Esqueleto" class="h-10 w-10"/>
@@ -511,7 +510,13 @@ toggle.addEventListener("click", () => {
   yearly = !yearly;
   
   if (yearly) {
-    thumb.classList.add("translate-x-7"); // mueve el círculo
+    // mover thumb
+    thumb.classList.add("translate-x-7");
+    // cambiar color del switch
+    toggle.classList.remove("bg-gray-300","dark:bg-white/10","border-gray-400","dark:border-white/10");
+    toggle.classList.add("bg-primary-500","border-primary-600");
+    
+    // actualizar precios
     prices.forEach(p => p.textContent = p.dataset.year);
     periods.forEach(p => p.textContent = "/año");
     buyButtons.forEach(b => {
@@ -519,10 +524,13 @@ toggle.addEventListener("click", () => {
     });
   } else {
     thumb.classList.remove("translate-x-7");
+    toggle.classList.remove("bg-primary-500","border-primary-600");
+    toggle.classList.add("bg-gray-300","dark:bg-white/10","border-gray-400","dark:border-white/10");
+    
     prices.forEach(p => p.textContent = p.dataset.month);
     periods.forEach(p => p.textContent = "/mes");
     buyButtons.forEach(b => {
-      b.href = b.getAttribute("href").split("?")[0]; // restaura href base
+      b.href = b.getAttribute("href").split("?")[0]; // restaurar base
     });
   }
 });
@@ -574,6 +582,7 @@ toggle.addEventListener("click", () => {
   </script>
 </body>
 </html>
+
 
 
 
