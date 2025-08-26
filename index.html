@@ -15,6 +15,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: "class", // importante
       theme: {
         extend: {
           fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
@@ -69,19 +70,19 @@
       <div class="flex h-16 items-center justify-between rounded-2xl glass px-4">
         <a href="#" class="flex items-center gap-3">
           <img src="https://www.tarohosting.com/TH.png" alt="TaroHosting" class="h-9 w-9" loading="lazy" />
-          <span class="text-lg font-semibold opacity-90">TaroHosting</span>
+          <span class="text-lg font-semibold opacity-90 text-black dark:text-white">TaroHosting</span>
         </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm text-black/70 dark:text-black/70 dark:text-black dark:text-white/70">
-          <a href="#planes" class="hover:text-black dark:hover:text-black dark:text-white">Planes</a>
-          <a href="#servicios" class="hover:text-black dark:hover:text-black dark:text-white">Servicios</a>
-          <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="hover:text-black dark:hover:text-black dark:text-white">Soporte</a>
+        <nav class="hidden md:flex items-center gap-6 text-sm text-black/70 dark:text-white/70">
+          <a href="#planes" class="hover:text-black dark:hover:text-white">Planes</a>
+          <a href="#servicios" class="hover:text-black dark:hover:text-white">Servicios</a>
+          <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="hover:text-black dark:hover:text-white">Soporte</a>
         </nav>
         <div class="flex items-center gap-3">
           <!-- Toggle theme -->
           <button id="themeToggle" class="rounded-xl p-2 glass" aria-label="Cambiar tema">
             <i class="fa-solid fa-moon"></i>
           </button>
-          <a href="#planes" class="hidden sm:inline-flex items-center rounded-xl px-4 py-2 text-sm font-semibold text-black bg-primary-500 hover:bg-primary-400 active:bg-primary-600 transition shadow-glow">Ver planes</a>
+          <a href="#planes" class="hidden sm:inline-flex items-center rounded-xl px-4 py-2 text-sm font-semibold text-black dark:text-white bg-primary-500 hover:bg-primary-400 active:bg-primary-600 transition shadow-glow">Ver planes</a>
           <button class="md:hidden rounded-xl p-2 glass" id="menuBtn" aria-label="Abrir menú">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
@@ -89,9 +90,9 @@
       </div>
       <!-- mobile -->
       <div id="mobile" class="hidden mt-2 glass rounded-2xl p-3 md:hidden">
-        <a href="#planes" class="block px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5">Planes</a>
-        <a href="#servicios" class="block px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5">Servicios</a>
-        <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="block px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5">Soporte</a>
+        <a href="#planes" class="block px-3 py-2 rounded-lg text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5">Planes</a>
+        <a href="#servicios" class="block px-3 py-2 rounded-lg text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5">Servicios</a>
+        <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="block px-3 py-2 rounded-lg text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5">Soporte</a>
       </div>
     </div>
   </header>
@@ -455,20 +456,20 @@
     <div class="mx-auto max-w-7xl px-4 py-12 grid md:grid-cols-4 gap-10">
       <div>
         <img src="https://www.tarohosting.com/TaroHosting.png" alt="TaroHosting" class="h-12 w-auto mb-3" />
-        <p class="text-sm text-black/70 dark:text-black/70 dark:text-black dark:text-white/70 max-w-xs">Calidad y honestidad al mejor precio ✨<br> Hosting confiable para que tu proyecto crezca sin límites.</p>
+        <p class="text-sm text-black/70 dark:text-white/70 max-w-xs">Calidad y honestidad al mejor precio ✨<br> Hosting confiable para que tu proyecto crezca sin límites.</p>
       </div>
       <div>
-        <h4 class="text-black dark:text-black dark:text-white font-semibold mb-3">Enlaces rápidos</h4>
-        <ul class="space-y-2 text-sm text-black/70 dark:text-black/70 dark:text-black dark:text-white/70">
-          <li><a href="#planes" class="hover:text-black dark:hover:text-black dark:text-white">Planes</a></li>
-          <li><a href="#servicios" class="hover:text-black dark:hover:text-black dark:text-white">Servicios</a></li>
-          <li><a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="hover:text-black dark:hover:text-black dark:text-white">Soporte</a></li>
-          <li><a href="#" class="hover:text-black dark:hover:text-black dark:text-white">Política de privacidad</a></li>
+        <h4 class="text-black dark:text-white font-semibold mb-3">Enlaces rápidos</h4>
+        <ul class="space-y-2 text-sm text-black/70 dark:text-white/70">
+          <li><a href="#planes" class="hover:text-black dark:hover:text-white">Planes</a></li>
+          <li><a href="#servicios" class="hover:text-black dark:hover:text-white">Servicios</a></li>
+          <li><a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="hover:text-black dark:hover:text-white">Soporte</a></li>
+          <li><a href="#" class="hover:text-black dark:hover:text-white">Política de privacidad</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-black dark:text-black dark:text-white font-semibold mb-3">Servicios</h4>
-        <ul class="space-y-2 text-sm text-black/70 dark:text-black/70 dark:text-black dark:text-white/70">
+        <h4 class="text-black dark:text-white font-semibold mb-3">Servicios</h4>
+        <ul class="space-y-2 text-sm text-black/70 dark:text-white/70">
           <li>Minecraft Hosting</li>
           <li>Servidores VPS</li>
           <li>Protección Anti-DDoS</li>
@@ -476,15 +477,15 @@
         </ul>
       </div>
       <div>
-        <h4 class="text-black dark:text-black dark:text-white font-semibold mb-3">Síguenos</h4>
+        <h4 class="text-black dark:text-white font-semibold mb-3">Síguenos</h4>
         <div class="flex flex-col gap-3">
-          <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 glass border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10">
+          <a href="https://discord.com/invite/yYDk6EPHy6" target="_blank" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 glass border border-black/10 dark:border-white/10 text-black dark:text-white hover:bg-black/10 dark:hover:bg-white/10">
             <i class="fa-brands fa-discord"></i> Discord de soporte
           </a>
         </div>
       </div>
     </div>
-    <div class="border-t border-black/10 dark:border-white/10 py-6 text-center text-sm text-black/60 dark:text-black dark:text-white/60">
+    <div class="border-t border-black/10 dark:border-white/10 py-6 text-center text-sm text-black/60 dark:text-white/60">
       © <span id="y"></span> TaroHosting. Todos los derechos reservados.
     </div>
   </footer>
@@ -520,23 +521,22 @@
     });
 
     function setDark() {
-  body.dataset.theme = "dark";
-  body.classList.remove("bg-white","text-black");
-  body.classList.add("bg-dark-900","text-white","dark");
-  document.documentElement.style.colorScheme = "dark";
-  themeToggle.innerHTML = `<i class="fa-solid fa-sun"></i>`;
-}
+      body.dataset.theme = "dark";
+      body.classList.add("dark","bg-dark-900","text-white");
+      body.classList.remove("bg-white","text-black");
+      document.documentElement.style.colorScheme = "dark";
+      themeToggle.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+    }
 
-function setLight() {
-  body.dataset.theme = "light";
-  body.classList.remove("bg-dark-900","text-white","dark");
-  body.classList.add("bg-white","text-black");
-  document.documentElement.style.colorScheme = "light";
-  themeToggle.innerHTML = `<i class="fa-solid fa-moon"></i>`;
-}
+    function setLight() {
+      body.dataset.theme = "light";
+      body.classList.remove("dark","bg-dark-900","text-white");
+      body.classList.add("bg-white","text-black");
+      document.documentElement.style.colorScheme = "light";
+      themeToggle.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+    }
   </script>
 </body>
 </html>
-
 
 
